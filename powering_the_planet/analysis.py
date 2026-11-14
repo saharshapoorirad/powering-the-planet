@@ -66,7 +66,15 @@ def gdp_co2_percent_changes(gdp_co2):
 
 
 def years_gdp_up_co2_down(gdp_co2):
-    """Find years when GDP rose and CO₂ fell versus the previous year."""
+    """Find years when GDP rose and CO₂ fell compared with the previous year.
+
+    Args:
+        gdp_co2: A table with country, year, GDP, and CO₂ columns.
+
+    Returns:
+        A table of matching country-years and their GDP and CO₂
+        percentage changes.
+    """
     yearly = gdp_co2.sort_values(["country", "year"]).copy()
 
     yearly["gdp_change_pct"] = (
