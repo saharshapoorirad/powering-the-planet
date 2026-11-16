@@ -87,3 +87,25 @@ def years_gdp_up_co2_down(gdp_co2):
     both = (yearly["gdp_change_pct"] > 0) & (yearly["co2_change_pct"] < 0)
     columns = ["country", "year", "gdp_change_pct", "co2_change_pct"]
     return yearly.loc[both, columns]
+
+
+def co2_intensity_index(gdp_co2):
+    """Index CO₂ per unit of GDP to 100 in 2000 for each country.
+
+    Args:
+        gdp_co2: A table with country, year, GDP, and annual CO₂.
+
+    Returns:
+        A table with country, year, and the CO₂ intensity index.
+    """
+    yearly = gdp_co2.sort_values(["country", "year"]).copy()
+    yearly["co2_per_gdp"] = yearly["co2"] / yearly["gdp"]
+
+    baseline = (
+        yearly[yearly["year"] == 2000]
+        .set_index("country")["co2_per_gdp"]
+    )
+    yearly["intensity_index"] = (
+        yearly["co2_per_gdp"] / yearly["country"].map(baseline) * 100
+    )
+    return yearly[["country", "year", "intensity_index"]]

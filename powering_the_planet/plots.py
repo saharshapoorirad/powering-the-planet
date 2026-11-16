@@ -38,3 +38,27 @@ def plot_gdp_co2_indexed(gdp_co2, country):
     ax.set_ylabel("Index (2000 = 100)")
     ax.grid(alpha=0.3)
     return ax
+
+
+def plot_co2_intensity(intensity):
+    """Plot CO₂ per unit of GDP for each country.
+
+    Args:
+        intensity: A table with country, year, and intensity_index.
+
+    Returns:
+        Matplotlib axes containing the line chart.
+    """
+    yearly = intensity.pivot(
+        index="year", columns="country", values="intensity_index"
+    )
+    ax = yearly.plot(
+        figsize=(8, 5),
+        title="CO₂ per unit of GDP, 2000–2022",
+    )
+    ax.axhline(100, color="gray", linestyle="--", alpha=0.6)
+    ax.set_xlabel("Year")
+    ax.set_ylabel("Index (2000 = 100)")
+    ax.legend(title="Country")
+    ax.grid(alpha=0.3)
+    return ax
