@@ -44,12 +44,8 @@ Open `report.ipynb` in VS Code, choose the Python kernel inside `.venv`, then cl
 - `requirements.txt` — lists the Python packages needed to run the notebook.
 - `.gitignore` — tells Git to skip local downloads and generated files.
 
-## 5. Conclusion and limitations
+## Results at a glance
 
-In France, Germany, and Italy, the fossil-fuel share fell and the renewable-energy share rose from 2000 to 2025. Annual CO₂ emissions and emissions per person were lower in 2024 than in 2000. GDP was higher and annual CO₂ emissions lower in 2022 than in 2000. We also found 28 country-year cases in which GDP rose while CO₂ fell compared with the preceding year.
+In France, Germany, and Italy, renewable-energy shares rose and fossil-fuel shares fell from 2000 to 2025. Annual CO₂ emissions fell from 2000 to 2024; GDP rose while CO₂ emissions fell from 2000 to 2022.
 
-This is a descriptive comparison of three countries; it does not show that one change caused another. The three questions use different end years: 2025 for energy, 2024 for CO₂, and 2022 for GDP.
-
-## Data definitions and sources
-
-[OWID's energy dataset](https://catalog.ourworldindata.org/energy/owid_energy/) measures the energy shares as percentages of total energy supply. The [OWID CO₂ dataset](https://github.com/owid/co2-data) supplies emissions and GDP. Here, “total CO₂” means countrywide emissions from fossil fuels and industry; land-use change is excluded. The CSV files are kept locally and can be downloaded using the README instructions. Later dataset updates may change the results.
+The GDP data are measured in international dollars at 2011 prices and end in 2022. See [the report](report.ipynb) for the exact results, charts, and limitations.
