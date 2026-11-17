@@ -222,3 +222,5 @@ __marimo__/
 # Full data downloads stay on this Mac
 data/owid_energy.csv
 data/owid_co2.csv
+
+data/archive/
