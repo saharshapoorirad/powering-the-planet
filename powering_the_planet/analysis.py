@@ -8,6 +8,10 @@ def select_energy_mix(energy):
     columns = [
         "country",
         "year",
+        "coal_energy_share_pct",
+        "oil_energy_share_pct",
+        "gas_energy_share_pct",
+        "nuclear_energy_share_pct",
         "fossil_fuels_energy_share_pct",
         "renewables_energy_share_pct",
     ]
@@ -20,6 +24,10 @@ def energy_share_changes(energy_mix):
     end = energy_mix[energy_mix["year"] == 2025].set_index("country")
 
     columns = [
+        "coal_energy_share_pct",
+        "oil_energy_share_pct",
+        "gas_energy_share_pct",
+        "nuclear_energy_share_pct",
         "fossil_fuels_energy_share_pct",
         "renewables_energy_share_pct",
     ]

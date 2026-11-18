@@ -4,7 +4,7 @@ An analysis of energy shares, CO₂ emissions, and GDP in France, Germany, and I
 
 ## Questions
 
-1. How did fossil-fuel and renewable-energy shares change from 2000 to 2025?
+1. How did coal, oil, gas, nuclear-energy, and renewable-energy shares change from 2000 to 2025?
 2. How did total and per-person CO₂ emissions change from 2000 to 2024?
 3. When did GDP rise while CO₂ emissions fell from 2000 to 2022?
 
@@ -13,7 +13,7 @@ An analysis of energy shares, CO₂ emissions, and GDP in France, Germany, and I
 
 The report uses two fixed versions of Our World in Data CSV files:
 
-- `owid_energy.csv`: [energy data, version 2026-09-10](https://catalog.ourworldindata.org/garden/energy/2026-09-10/owid_energy/owid_energy.csv), for fossil-fuel and renewable-energy shares.
+- `owid_energy.csv`: [energy data, version 2026-09-10](https://catalog.ourworldindata.org/garden/energy/2026-09-10/owid_energy/owid_energy.csv), for the five energy-source shares and their fossil-fuel total.
 - `owid_co2.csv`: [CO₂ data, version 2026-11-10](https://catalog.ourworldindata.org/garden/emissions/2026-11-10/owid_co2/owid_co2.csv), for emissions, emissions per person, and GDP.
 
 When a file is missing, `powering_the_planet/data.py` downloads it into `data/` automatically. Later runs reuse the local copy. These large CSV files are excluded from Git.
@@ -44,6 +44,6 @@ Open `report.ipynb` in VS Code, choose the Python kernel inside `.venv`, then cl
 
 ## Results at a glance
 
-In France, Germany, and Italy, renewable-energy shares rose and fossil-fuel shares fell from 2000 to 2025. Annual CO₂ emissions fell from 2000 to 2024; GDP rose while CO₂ emissions fell from 2000 to 2022.
+All three countries had higher renewable-energy shares in 2025 than in 2000, but their other sources shifted differently: France reduced the shares of coal, oil, and gas; Germany gained renewables while its overall fossil-fuel share barely changed; Italy reduced coal and oil while gas gained share. Annual CO₂ emissions fell from 2000 to 2024; GDP rose while CO₂ emissions fell from 2000 to 2022.
 
 The GDP data are measured in international dollars at 2011 prices and end in 2022. See [the report](report.ipynb) for the exact results, charts, and limitations.
